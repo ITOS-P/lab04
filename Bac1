@@ -1,0 +1,26 @@
+package TruuTuong;
+
+public class Bac1 extends PhuongTrinh {
+    protected double hs0, hs1;
+    public Bac1(){
+        hs0 = hs1 = 0;
+    }
+    public Bac1(double b, double c){
+        hs1= b; hs0 = c;
+    }
+    public String toString(){
+        return hs1 +"x "+((hs0>=0)?"+":"") + hs0 +" =0" + giai();
+    }
+    @Override
+    public String giai() {
+        if(hs1==0)
+            if(hs0==0) return " Vo so nghiem ";
+            else return " Vo nghiem ";
+        else return " x = " + -hs0/hs1;
+    }
+    public int check() {
+        if(giai()==" Vo nghiem ") return 0;
+        else if (giai()==" Vo so nghiem ") return 2;
+        else return 1;
+    }
+}
